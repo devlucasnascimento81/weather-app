@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>🌤️ Previsão do tempo</h1>
+        </header>
+
+        <!-- Formulário de busca -->
+        <section class="search-section">
+            <input 
+                type="text"
+                id="cityInput"
+                placeholder="Digite o nome da cidade..."
+                aria-label="Campo de busca de cidade"
+            >
+            <button id="searchBtn" aria-label="Buscar clima">
+                Buscar
+            </button>
+        </section>
+        
+        <!-- Resultado do clima -->
+        <section id="weatherResult" class="weather-result hidden">
+        <!-- Aqui vamos inserir os dados via JavaScript -->
+        </section>
+
+
+         <!-- Mensagem de erro -->
+         <div id="errorMessage" class="error-message hidden">
+         <!-- Mensagens de erro vão aqui -->   
+         </div>
+
+
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
