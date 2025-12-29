@@ -1,0 +1,149 @@
+@import url('reset.css');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #64b5f6;
+    --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: var(--text-light);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#cityInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#searchBtn {
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#searchBtn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+
+}
+
+#searchBtn:active {
+    transform: translateY(0);
+}
+
+.weather-result {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg,#667eea15 0%, #764ba215 100%);
+    border-radius: 15px;
+    animation: fadeIn 0.5s;
+}
+
+.error-message {
+    padding: 15px;
+    background: #ffe6e6;
+    border-left: 4px solid var(--error-color);
+    border-radius: 8px;
+    animation: shake 0.5s;
+}
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10);
+    }
+    75%{
+        transform: translateX(10px);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .search-section {
+        flex-direction: column;
+    }
+    
+    #searchBtn {
+        width: 100%;
+    }
+}
