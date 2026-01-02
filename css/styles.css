@@ -105,6 +105,42 @@ body {
     display: none;
 }
 
+.weather-info h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.weather-info img {
+    width: 100px;
+    height: 100px;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #555;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    color: #666;
+}
+
+.details p {
+    font-size: 0.95rem;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
