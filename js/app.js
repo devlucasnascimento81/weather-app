@@ -62,12 +62,40 @@ function showWeather() {
     weatherResult.classList.remove('hidden');
 }
 
-// Função que vai buscar dados da API
-function fetchWeather(city) {
-    // Por enquanto só um console.log
-    console.log('Função fetchWeather chamada com:', city);
-
-    // Vamos implementar aqui no próximo passo!
-    showError('API ainda não implementada (próximo passo!)');
+// Função que busca dados da API
+async function fetchWeather(city) {
+    // URL da API (idioma em português)
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`;
+    
+    try {
+        // Faz a requisição
+        const response = await fetch(url);
+        
+        // Verifica se deu erro (cidade não encontrada, etc)
+        if (!response.ok) {
+            if (response.status === 404) {
+                showError('Cidade não encontrada. Tente novamente.');
+            } else {
+                showError('Erro ao buscar dados. Tente novamente mais tarde.');
+            }
+            return;
+        }
+        
+        // Converte a resposta para JSON
+        const data = await response.json();
+        
+        // Mostra os dados no console (temporário)
+        console.log('Dados recebidos:', data);
+        
+        // Exibe os dados na tela
+        displayWeather(data);
+        
+    } catch (error) {
+        console.error('Erro na requisição:', error);
+        showError('Erro de conexão. Verifique sua internet.');
+    }
 }
+
+// função que exibe os dados na  tela
+
 
